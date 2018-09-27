@@ -4,7 +4,8 @@
   "description": "In this project, I am creating a movie database.  Functionality includes adding movies by: - name, genre, image url, release date and run time - remove movies - delete existing movies - ability to show total number of movies next to each genre",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/juliq/ext-weekend-movie-project/issues"
   },
-  "homepage": "https://github.com/juliq/ext-weekend-movie-project#readme"
+  "homepage": "https://github.com/juliq/ext-weekend-movie-project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  }
 }
