@@ -23,22 +23,28 @@ app.get('/movies', (req, res) => {
     // Ask database for all movies
     pool.query(`SELECT * FROM "movies";`).then((results) => {
         //send back all movies
-        res.send(results.rows)
+        res.send(results.rows);
+    }).catch((error) => {
+        console.log('Error with server-side GET:', error);
+        res.send(500);
     })
 })
 
 // GET genres 
 
-///////// Show total number of movies next to each genre
-app.get('/___', (req,res) => {      ///////////////
+// Show total number of movies next to each genre
+app.get('/genre', (req, res) => { 
     // Ask data base for total number of movies next to each genre
     pool.query(`SELECT "genre", count("movies"."genre_id")
     FROM "genres"
     JOIN "movies"
     ON "genres"."id" = "movies"."genre_id"
     GROUP BY "genres"."genre";`).then((results) => {
-        res.send(results.rows)
-    })
+            res.send(results.rows)
+        }).catch((error) => {
+            console.log('Error with server-side GET:', error);
+            res.send(500);
+        })
 })
 
 // POST
@@ -56,13 +62,17 @@ app.post('/movies', (req, res) => {
             })
 })
 
-// DELETE a movie from the database  ///////////////
-app.delete('/:id'), (req, res) => {   /////////
-    let id = req.params.id
-    pool.query(`DELETE FROM "listings" WHERE id = $1;`, [id].then((results) => {
+// DELETE a movie from the database 
+app.delete('/:id'), (req, res) => { 
+    let id = req.params.id; // params - used when editing/deleting
+
+    pool.query(`DELETE FROM "listings" WHERE id = $1;`, [id])
+    .then((results) => {
         res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in server-side POST:', error);
+        res.sendStatus(500);
     })
-    )
 }
 
 
