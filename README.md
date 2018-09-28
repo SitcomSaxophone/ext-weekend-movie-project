@@ -7,7 +7,7 @@ Functionality includes adding movies by:
 - delete existing movies
 - ability to show total number of movies next to each genre
 
-There will be two views:
+In addition to a Home page, there will be two views:
 1. Enables user to add a movie
 2. Allows for managing genres
 
@@ -49,10 +49,19 @@ UPDATE "movies"
 SET "image" = 'citizen-kane.jpg'
 WHERE "title" = 'Citizen Kane';
 
+-- Add a movie to th database
 INSERT INTO "movies" ("title", "release_date", "run_time", "image", "genre_id")
 VALUES ('Crazy Rich Asians', '8-15-2018', '2h 1m', 'crazy-rich-asians.jpg', '2');
 
 CREATE TABLE "movie_genre"(
 	SELECT * FROM "movies"
 	JOIN "genres" ON "genre"."id" = "title"."genre.id";
+
+-- Show total number of movies next to each genre
+SELECT "genre", count("movies"."genre_id")
+FROM "genres"
+JOIN "movies"
+ON "genres"."id" = "movies"."genre_id"
+GROUP BY "genres"."genre";
+
 

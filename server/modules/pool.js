@@ -20,6 +20,4 @@ pool.on('error', (err) => {
     process.exit(-1);
 });
 
-let pool = require('../modules/pool.js');
-
 module.exports = pool;
