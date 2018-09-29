@@ -4,8 +4,8 @@ const app = angular.module('MovieApp', ['ngRoute']);
 
 app.config(['routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: '../views/home.html',
-        controller: 'HomeController as vm'
+        template: 'hello world',
+        
     })
 
         //movies

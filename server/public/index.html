@@ -16,18 +16,24 @@
     <link rel="stylesheet" href="vendors/angular-material.css">
     <script src="vendors/angular-material.min.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
-    <link rel="stylesheet"href="styles/style.css" >
+    <link rel="stylesheet" href="styles/style.css">
     <title>Movie Database</title>
 </head>
 
-<body ng-app="MovieApp">
 
-    <div class="topnav">
-        <a href="#!/movies">Movies</a>
-        <a href="#!/genres">Genres</a>
+<div class="container" ng-app="MovieApp">
 
-    </div>
+    <body>
+        <ng-view></ng-view>
+        
+        <div class="topnav">
+            <a href="#!/">Home</a>
+            <a href="#!/movies">Movies</a>
+            <a href="#!/genres">Genres</a>
 
-</body>
+        </div>
+
+    </body>
+</div>
 
 </html>

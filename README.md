@@ -64,4 +64,7 @@ JOIN "movies"
 ON "genres"."id" = "movies"."genre_id"
 GROUP BY "genres"."genre";
 
+-- Delete a movie from the database
+DELETE FROM "movies"
+WHERE "id" = '2';
 
