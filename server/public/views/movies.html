@@ -1,3 +1,27 @@
 <h1>Movies</h1>
+<div class="container">
 
-<input type=
+    <div class="card-deck">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="listing in vm.salesArray" style="width: 18rem;">
+                    <img class="card-img-top" src="../images/{{listing.image_path}}" alt="Card image cap">
+                    <div class="Sales">
+                        <h4 class="card-title">{{listing.city}}</h4>
+                        <h6 class="card-text">Property for {{listing.type}}</h6>
+                        <h6 class="card-text">Cost per month: ${{listing.cost}}</h6>
+                        <p class="footer">Square Feet: {{listing.sqft}}</p>
+                        <button type="button" ng-click="sale in vm.deleteSale" class="btn btn-info">Delete this
+                            Property</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- above - end row class -->
+    </div>
+    <!-- above - end card class -->
+</div>
+<!-- above - end container class -->
+
+
+</div>

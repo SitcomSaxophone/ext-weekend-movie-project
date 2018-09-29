@@ -4,7 +4,7 @@ app.controller('GenreController', ['$http', function($http) {
 
 // GET total number of movies in each genre
 vm.getGenresTotals = function () {
-    S$http({
+    $http({
         method: 'GET',
         url: '/genres',
     }).then((response) => {
