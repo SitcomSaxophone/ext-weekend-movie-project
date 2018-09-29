@@ -1,23 +1,24 @@
 <h1>Movies</h1>
 <div class="container">
 
-        <div class="movies">
-                <h3>Add a Sale</h3>
-                <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Title">
-                <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Genre">
-                <input required type="text" ng-model="vm.addNewSale.sqft" placeholder="Release Date">
-                <input required type="text" ng-model="vm.addNewSale.city" placeholder="Run Time">
-                <input required type="text" ng-model="vm.addNewSale.image" placeholder="Image">
-                
-                <button class="btn btn-info" ng-click="vm.addNewProperty(vm.addNewSale)">Submit</button>
-            </div>
+    <div class="movies">
+        <h3>Add a Movie</h3>
+        <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Title">
+        <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Genre">
+        <input required type="text" ng-model="vm.addNewSale.sqft" placeholder="Release Date">
+        <input required type="text" ng-model="vm.addNewSale.city" placeholder="Run Time">
+        <input required type="text" ng-model="vm.addNewSale.image" placeholder="Image">
+
+        <button class="btn btn-info" ng-click="vm.addNewProperty(vm.addNewSale)">Submit</button>
+    </div>
 
     <!-- Movie cards -->
     <div class="card-deck">
         <div class="card">
             <div class="row">
                 <div class="col-md-4" style="width: 18rem;">
-                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZu2kQMtj4J9cZr7ndlz9fXadT1kLpC0F0OErHA4Sfgpqb9GJ432mdRg" alt="Card image cap">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZu2kQMtj4J9cZr7ndlz9fXadT1kLpC0F0OErHA4Sfgpqb9GJ432mdRg"
+                        alt="Card image cap">
                     <div class="Sales">
                         <h4 class="card-title">Movie Title</h4>
                         <h6 class="card-text">Genre</h6>
