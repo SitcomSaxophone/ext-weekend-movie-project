@@ -5,6 +5,7 @@ let pool = require('../modules/pool');
 
 // GET movies
 router.get('/', (req, res) => {
+    console.log('getting movies');
     // Ask database for all movies
     pool.query(`SELECT * FROM "movies";`).then((results) => {
         //send back all movies
@@ -31,17 +32,18 @@ router.post('/', (req, res) => {
 });
 
 // DELETE a movie from the database 
-router.delete('/:id'), (req, res) => {
-    let id = req.params.id; // params - used when editing/deleting
+router.delete('/:id', (req, res) => {
 
-    pool.query(`DELETE FROM "listings" WHERE id = $1;`, [id])
+    let id = req.params.id; // params - used when editing/deleting
+    console.log('attempting to delete with id =' + id  );
+    pool.query(`DELETE FROM "movies" WHERE id = $1;`, [id])
         .then((results) => {
             res.sendStatus(200);
         }).catch((error) => {
             console.log('Error in server-side POST:', error);
             res.sendStatus(500);
         })
-};
+});
 
 
 

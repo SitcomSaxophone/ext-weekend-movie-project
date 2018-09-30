@@ -1,8 +1,9 @@
-app.controller('MovieController', ['$http', function($http) {
+app.controller('MovieController', ['$http', function ($http) {
     console.log('Movie Controller loaded');
     var self = this;
 
     self.movieArray = [];
+    
 
     // GET all movies
     self.getAllMovies = function () {
@@ -21,7 +22,13 @@ app.controller('MovieController', ['$http', function($http) {
     // ADD(POST) a movie to the database
     self.addMovie = function (movie) {
         console.log(movie);
-        let movieToAdd = { title: movies.title, release_date: movies.release_date, run_time: movies.run_time, image: movies.image, genre_id: movies.genre_id };
+        let movieToAdd = {
+            title: movies.title,
+            release_date: movies.release_date,
+            run_time: movies.run_time,
+            image: movies.image,
+            genre_id: movies.genre_id
+        };
         $http({
             method: 'POST',
             url: '/movies',
@@ -35,11 +42,15 @@ app.controller('MovieController', ['$http', function($http) {
 
     // DELETE a movie from the database
     self.deleteMovie = function (id) {
-        $http.delete(`/movies/`, { params: { id: id } })
-            .then(function () {
-                self.getAllMovies();
-            })
+        $http.delete(`/movies/` + id )
+            .then(function (response) {
+            console.log('delete successful', response);
+            self.getAllMovies();
+        }).catch(function (error) {
+            console.log('error deleting movies from database', error);
+        });
     };
+    
 
     self.getAllMovies();
 

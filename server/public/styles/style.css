@@ -1,0 +1,58 @@
+body, html {
+    font-family: Arial;
+    margin: 20px;
+    padding: 0;
+    background-color: #C3E4ED;
+}
+
+/* Add a deep sky blue background color to the top navigation */
+.topnav {
+    background-color:#00688B;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: rgb(107, 186, 207);
+    color: rgb(85, 140, 158);
+}
+
+.card{
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.card-title{
+    background-color: #00688B;
+    color: white;
+}
+
+,card-footer{
+    background-color:  deepskyblue;
+    color: white;
+}
+
+h2 {text-align: center};
+
+.card-img-top{
+
+    width:50px;
+    height:50px
+
+    }
+
+img {
+        width: 200px;
+        height: 400px;
+        object-fit: cover;
+    }

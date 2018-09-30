@@ -1,17 +1,19 @@
 app.controller('GenreController', ['$http', function($http) {
     console.log('Genre Controller loaded');
-    const vm = this;
+
+    var self = this;
+    self.genreArray = [];
 
 // GET total number of movies in each genre
-vm.getGenresTotals = function () {
+self.getGenresTotals = function () {
     $http({
         method: 'GET',
         url: '/genres',
     }).then((response) => {
-        console.log(response.data.results);
-        vm.genreArray = response.data.results;
+        console.log(response.data);
+        self.genreArray = response.data;
     }).catch((error) => {
-        console.log('error getting properties from database', error);
+        console.log('error getting genres from database', error);
     })
 };
 
@@ -19,7 +21,7 @@ vm.getGenresTotals = function () {
 
 
 // Add (POST) a genre to the database
-vm.addGenre = function (genres) {
+self.addNewGenre = function (genres) {
     console.log(genres);
     let GenreToAdd = { genre: genre.genre };
     $http({
@@ -34,6 +36,6 @@ vm.addGenre = function (genres) {
     })
 };
 
-vm.getAllMovies();
+self.getGenresTotals();
     
 }])

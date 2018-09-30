@@ -5,20 +5,20 @@
 <!-- Add a genre -->
 <div class="genres">
     <h3>Add a Genre</h3>
-    <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Genre to Add">
+    <input required type="text" ng-model="vm.addNewGenre.genre" placeholder="Genre to Add">
 
 
     <button class="btn btn-info" ng-click="vm.addNewProperty(vm.addNewSale)">Submit</button>
 </div>
 
- <!-- Movie cards -->
+ <!-- Genre cards -->
  <div class="card-deck">
         <div class="card">
             <div class="row">
-                <div class="col-md-4" style="width: 18rem;">
+                <div class="col-md-4" ng-repeat="genre in vm.genreArray" style="width: 18rem;">
                     <div class="Genres">
-                        <h4 class="card-title">Genre Name</h4>
-                        <h6 class="card-text">Number of Movies in the Genre</h6>
+                        <h4 class="card-title">{{genre.genre}}</h4>
+                        <h6 class="card-text">{{genre.count}}</h6>
                         
                         
                     </div>

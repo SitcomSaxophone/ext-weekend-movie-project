@@ -3,36 +3,47 @@
 
     <div class="movies">
         <h3>Add a Movie</h3>
-        <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Title">
-        <input required type="text" ng-model="vm.addNewSale.cost" placeholder="Genre">
-        <input required type="text" ng-model="vm.addNewSale.sqft" placeholder="Release Date">
-        <input required type="text" ng-model="vm.addNewSale.city" placeholder="Run Time">
-        <input required type="text" ng-model="vm.addNewSale.image" placeholder="Image">
+        <input required type="text" ng-model="vm.movie.title" placeholder="Title">
+        <!-- <input required type="text" ng-model="vm.movie.genre" placeholder="Genre"> -->
 
-        <button class="btn btn-info" ng-click="vm.addNewProperty(vm.addNewSale)">Submit</button>
+        <!-- Drop down genre menu here -->
+        <!-- <select ng-model="vm.movie.genre_id"> -->
+        <!-- <option ng-repeat=" ">{{movie.genre_id}}</option> -->
+        <!-- </select> -->
+        <input required type="text" ng-model="vm.movie.release_date" placeholder="Release Date">
+        <input required type="text" ng-model="vm.movie.run_time" placeholder="Run Time">
+        <input required type="text" ng-model="vm.movie.image" placeholder="Image">
+
+        <button class="btn btn-info" ng-click="vm.addMovie(vm.movie)">Submit</button>
     </div>
 
     <!-- Movie cards -->
     <div class="card-deck">
         <div class="card">
             <div class="row">
-                <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
-                    <img class="card-img-top" src="{{movie.image}}"
-                        alt="Card image cap">
-                    <div class="movie-cards">
+                <span class="border">
+                    <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
                         <h4 class="card-title">{{movie.title}}</h4>
-                        <h6 class="card-text">{{movie.genre}}</h6>
-                        <h6 class="card-text">{{movie.release_date}}</h6>
-                        <p class="footer">{{movie.run_time}}</p>
-                        <button type="button" ng-click="movie in vm.deleteMovie" class="btn btn-info">Delete this
-                            Property</button>
+                        
+                        <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
+                        <div class="movie-cards">
+
+                            <!-- <h6 class="card-text">{{movie.genre}}</h6> -->
+                            <h6 class="card-text">{{movie.release_date}}</h6>
+                            <p class="footer">{{movie.run_time}}</p>
+                            <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
+                                Movie</button>
+                        </div>
                     </div>
-                </div>
-            </div>
+            
+            </span>
         </div>
-        <!-- above - end row class -->
     </div>
-    <!-- above - end card class -->
+    <!-- above - end row class -->
+</div>
+<!-- above - end card class -->
+</div>
+<!-- above - end card-deck -->
 </div>
 <!-- above - end container class -->
 
