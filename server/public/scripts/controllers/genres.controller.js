@@ -38,4 +38,7 @@ self.addNewGenre = function (genres) {
 
 self.getGenresTotals();
     
+
+
+
 }])

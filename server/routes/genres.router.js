@@ -29,6 +29,14 @@ router.post('/', (req, res) => {
         })
 });
 
+router.get('/all', (req,res) => {
+    pool.query(`SELECT * FROM "genres";`)
+    .then((results) => {
+        res.send(results.rows)
+    }).catch((error) => {
+        res.send(500);
+    })
+});
 
 
 module.exports = router;

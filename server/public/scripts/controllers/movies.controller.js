@@ -3,7 +3,7 @@ app.controller('MovieController', ['$http', function ($http) {
     var self = this;
 
     self.movieArray = [];
-    
+
 
     // GET all movies
     self.getAllMovies = function () {
@@ -23,18 +23,18 @@ app.controller('MovieController', ['$http', function ($http) {
     self.addMovie = function (movie) {
         console.log(movie);
         let movieToAdd = {
-            title: movies.title,
-            release_date: movies.release_date,
-            run_time: movies.run_time,
-            image: movies.image,
-            genre_id: movies.genre_id
+            title: movie.title,
+            release_date: movie.release_date,
+            run_time: movie.run_time,
+            image: movie.image,
+            genre_id: movie.genre_id
         };
         $http({
             method: 'POST',
             url: '/movies',
             data: movieToAdd
         }).then((response) => {
-            console.log('Error posting new listing:', error);
+            console.log('Success posting new movie:', response);
         });
         self.getAllMovies();
     }; // end addMovie
@@ -42,17 +42,32 @@ app.controller('MovieController', ['$http', function ($http) {
 
     // DELETE a movie from the database
     self.deleteMovie = function (id) {
-        $http.delete(`/movies/` + id )
+        $http.delete(`/movies/` + id)
             .then(function (response) {
-            console.log('delete successful', response);
-            self.getAllMovies();
+                console.log('delete successful', response);
+                self.getAllMovies();
+            }).catch(function (error) {
+                console.log('error deleting movies from database', error);
+            });
+    };
+
+    // GET all genres
+    self.getAllGenres = function () {
+        $http({
+            method: 'GET',
+            url: '/genres/all'
+        }).then(function (response) {
+            console.log('getAllGenres successful', response.data);
+            self.genreArray = response.data;
         }).catch(function (error) {
-            console.log('error deleting movies from database', error);
+            console.log('error getting properties from database', error);
         });
     };
-    
 
     self.getAllMovies();
+
+    self.getAllGenres();
+
 
 
 }]); // end MovieApp.controller

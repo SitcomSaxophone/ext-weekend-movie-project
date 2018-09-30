@@ -7,9 +7,10 @@
         <!-- <input required type="text" ng-model="vm.movie.genre" placeholder="Genre"> -->
 
         <!-- Drop down genre menu here -->
-        <!-- <select ng-model="vm.movie.genre_id"> -->
-        <!-- <option ng-repeat=" ">{{movie.genre_id}}</option> -->
-        <!-- </select> -->
+        <select ng-model="vm.movie.genre_id">
+            <!-- <option value="" disabled selected>Genre</option> -->
+            <option ng-repeat="genre in vm.genreArray" value="{{genre.id}}">{{genre.genre}}</option>
+        </select>
         <input required type="text" ng-model="vm.movie.release_date" placeholder="Release Date">
         <input required type="text" ng-model="vm.movie.run_time" placeholder="Run Time">
         <input required type="text" ng-model="vm.movie.image" placeholder="Image">
@@ -24,24 +25,24 @@
                 <span class="border">
                     <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
                         <h4 class="card-title">{{movie.title}}</h4>
-                        
+
                         <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
                         <div class="movie-cards">
 
                             <!-- <h6 class="card-text">{{movie.genre}}</h6> -->
-                            <h6 class="card-text">{{movie.release_date}}</h6>
+                            <h6 class="card-text">{{movie.release_date | date}}</h6>
                             <p class="footer">{{movie.run_time}}</p>
                             <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
                                 Movie</button>
                         </div>
                     </div>
-            
-            </span>
+
+                </span>
+            </div>
         </div>
+        <!-- above - end row class -->
     </div>
-    <!-- above - end row class -->
-</div>
-<!-- above - end card class -->
+    <!-- above - end card class -->
 </div>
 <!-- above - end card-deck -->
 </div>
