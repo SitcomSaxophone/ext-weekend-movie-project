@@ -22,27 +22,27 @@
     <div class="card-deck">
         <div class="card">
             <div class="row">
-                <span class="border">
-                    <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
-                        <h3 class="card-title">{{movie.title}}</h3>
 
-                        <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
-                        <div class="movie-cards">
+                <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
+                    <h3 class="card-title">{{movie.title}}</h3>
+                    <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
+                    <div class="movie-cards"></div>
 
-                            <!-- <h6 class="card-text">{{movie.genre}}</h6> -->
-                            <p class="card-text">Release Date: {{movie.release_date | date}}</p>
-                            <p class="card-text">Run Time: {{movie.run_time}}</p>
-                            <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
-                                Movie</button>
-                        </div>
-                    </div>
 
-                </span>
+                    <p class="card-text">Genre Category: {{movie.genre_id}}</p>
+                    <p class="card-text">Release Date: {{movie.release_date | date}}</p>
+                    <p class="card-text">Run Time: {{movie.run_time}}</p>
+                    <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
+                        Movie</button>
+                </div>
             </div>
+
+
         </div>
-        <!-- above - end row class -->
     </div>
-    <!-- above - end card class -->
+    <!-- above - end row class -->
+</div>
+<!-- above - end card class -->
 </div>
 <!-- above - end card-deck -->
 </div>

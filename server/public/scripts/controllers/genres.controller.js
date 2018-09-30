@@ -18,8 +18,6 @@ self.getGenresTotals = function () {
 };
 
 
-
-
 // Add (POST) a genre to the database
 self.addNewGenre = function (genres) {
     console.log(genres);
@@ -39,6 +37,6 @@ self.addNewGenre = function (genres) {
 self.getGenresTotals();
     
 
-
+ 
 
 }])
