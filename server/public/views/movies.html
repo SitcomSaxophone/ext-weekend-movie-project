@@ -24,14 +24,14 @@
             <div class="row">
                 <span class="border">
                     <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
-                        <h4 class="card-title">{{movie.title}}</h4>
+                        <h3 class="card-title">{{movie.title}}</h3>
 
                         <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
                         <div class="movie-cards">
 
                             <!-- <h6 class="card-text">{{movie.genre}}</h6> -->
-                            <h6 class="card-text">{{movie.release_date | date}}</h6>
-                            <p class="footer">{{movie.run_time}}</p>
+                            <p class="card-text">Release Date: {{movie.release_date | date}}</p>
+                            <p class="card-text">Run Time: {{movie.run_time}}</p>
                             <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
                                 Movie</button>
                         </div>
@@ -48,5 +48,5 @@
 </div>
 <!-- above - end container class -->
 
-<pre>{{vm | json }}</pre>
+<!-- <pre>{{vm | json }}</pre> -->
 </div>

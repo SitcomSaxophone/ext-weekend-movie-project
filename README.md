@@ -21,7 +21,7 @@ CREATE TABLE "genres" (
 SELECT * FROM "genres";
 
 INSERT INTO "genres" ("genre")
-VALUES ('documentary'), ('comedy'), ('rom-com'), ('action'), ('super-hero'), ('sci-fi'), ('holiday'), ('classic');
+VALUES ('Documentary'), ('Comedy'), ('Rom-Com'), ('Action'), ('Superhero'), ('Sci-Fi'), ('Holiday'), ('Classic');
 
 CREATE TABLE "movies" (
 "movie id" SERIAL PRIMARY KEY,
