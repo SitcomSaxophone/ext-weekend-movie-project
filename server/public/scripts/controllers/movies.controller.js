@@ -64,20 +64,6 @@ app.controller('MovieController', ['$http', function ($http) {
         });
     };
 
-    // added 9/30
-    // GET genre names 
-    // self.getGenreName = function () {
-    //     $http({
-    //         method: 'GET',
-    //         url: '/genres',
-    //     }).then((response) => {
-    //         console.log(response.data);
-    //         self.genreArray = response.data;
-    //     }).catch((error) => {
-    //         console.log('error getting genre names from database', error);
-    //     })
-    // };
-
 
     self.getAllMovies();
 
