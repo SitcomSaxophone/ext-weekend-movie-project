@@ -2,12 +2,13 @@ body, html {
     font-family: Arial;
     margin: 20px;
     padding: 0;
-    background-color: #C3E4ED;
+    background-color: #ecd9c6
+    ;
 }
 
-/* Add a deep sky blue background color to the top navigation */
+/* Add a deep burgundy background color to the top navigation */
 .topnav {
-    background-color:#00688B;
+    background-color:#800020;
     overflow: hidden;
 }
 
@@ -21,10 +22,10 @@ body, html {
     font-size: 17px;
 }
 
-/* Change the color of links on hover */
+/* Color of links on hover is "burly wood" */
 .topnav a:hover {
-    background-color: rgb(107, 186, 207);
-    color: rgb(85, 140, 158);
+    background-color: #DEB887;
+    color:#800020;
 }
 
 .card{
@@ -33,8 +34,12 @@ body, html {
 }
 
 .card-title{
-    background-color: #00688B;
+    background-color:#800020;
     color: white;
+}
+
+.card-body{
+    
 }
 
 /* ,card-footer{
@@ -45,10 +50,8 @@ body, html {
 h2 {text-align: center};
 
 .card-img-top{
-
     width:50px;
     height:50px
-
     }
 
 img {
@@ -56,3 +59,20 @@ img {
         height: 400px;
         object-fit: cover;
     }
+
+
+    
+    /* #banner{
+         
+background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT8O-3fQG72DB35fD_R7Me9gTosNWPDYnzdB54XJFqXYW-6ma44Q);
+height: 295px;
+background-size 100%;
+} */
+
+.jumbotron{
+    background-image: url("https://ifriendsandmy.files.wordpress.com/2013/11/now-showing.png?w=637&h=196");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 295px;
+    
+}

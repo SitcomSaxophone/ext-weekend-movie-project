@@ -1,42 +1,43 @@
-<h1>Movies</h1>
+<h1>Check out our Movie Library!</h1>
 <div class="container">
 
     <div class="movies">
-        <h3>Add a Movie</h3>
+        <!-- <h3>Add a Movie</h3> -->
         <input required type="text" ng-model="vm.movie.title" placeholder="Title">
         <!-- <input required type="text" ng-model="vm.movie.genre" placeholder="Genre"> -->
 
         <!-- Drop down genre menu here -->
         <select ng-model="vm.movie.genre_id">
-            <!-- <option value="" disabled selected>Genre</option> -->
+            <option value="" disabled selected>Genre</option>
             <option ng-repeat="genre in vm.genreArray" value="{{genre.id}}">{{genre.genre}}</option>
         </select>
         <input required type="text" ng-model="vm.movie.release_date" placeholder="Release Date">
         <input required type="text" ng-model="vm.movie.run_time" placeholder="Run Time">
         <input required type="text" ng-model="vm.movie.image" placeholder="Image">
 
-        <button class="btn btn-info" ng-click="vm.addMovie(vm.movie)">Submit</button>
+        <button class="btn btn-secondary" ng-click="vm.addMovie(vm.movie)">Submit</button>
     </div>
 
     <!-- Movie cards -->
     <div class="card-deck">
-        <div class="card">
+        <div class="card-body">
             <div class="row">
-
                 <div class="col-md-4" ng-repeat="movie in vm.movieArray" style="width: 18rem;">
-                    <h3 class="card-title">{{movie.title}}</h3>
-                    <img class="card-img-top" src="{{movie.image}}" alt="Card image cap">
-                    <div class="movie-cards"></div>
-
-
-                    <p class="card-text">Genre Category: {{movie.genre_id}}</p>
-                    <p class="card-text">Release Date: {{movie.release_date | date}}</p>
-                    <p class="card-text">Run Time: {{movie.run_time}}</p>
-                    <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-info">Delete this
-                        Movie</button>
+                        <div class="card border=secondary mb-3">
+                                <div class="text-center">
+                            <h3 class="card-title">{{movie.title}}</h3>
+                            <img class="card-img-top" class="rounded" src="{{movie.image}}" alt="Card image cap">
+                            <div class="movie-cards"></div>
+                            <p class="card-text">Genre Category: {{movie.genre_id}}</p>
+                            <p class="card-text">Release Date: {{movie.release_date | date}}</p>
+                            <p class="card-text">Run Time: {{movie.run_time}}</p>
+                            <button type="button" ng-click="vm.deleteMovie(movie.id)" class="btn btn-secondary">Delete
+                                this
+                                Movie</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
 
         </div>
     </div>

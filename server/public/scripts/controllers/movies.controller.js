@@ -60,9 +60,24 @@ app.controller('MovieController', ['$http', function ($http) {
             console.log('getAllGenres successful', response.data);
             self.genreArray = response.data;
         }).catch(function (error) {
-            console.log('error getting properties from database', error);
+            console.log('error getting genres from database', error);
         });
     };
+
+    // added 9/30
+    // GET genre names 
+    // self.getGenreName = function () {
+    //     $http({
+    //         method: 'GET',
+    //         url: '/genres',
+    //     }).then((response) => {
+    //         console.log(response.data);
+    //         self.genreArray = response.data;
+    //     }).catch((error) => {
+    //         console.log('error getting genre names from database', error);
+    //     })
+    // };
+
 
     self.getAllMovies();
 

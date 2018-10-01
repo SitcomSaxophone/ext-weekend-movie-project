@@ -22,14 +22,20 @@
     <title>Movie Database</title>
 </head>
 
-
 <div>
+    <div>
+        <div class="jumbotron" id="banner" img="https://ifriendsandmy.files.wordpress.com/2013/11/now-showing.png?w=637&h=196">
+            
+        </div>
+
+    </div>
 
     <body class="container" ng-app="MovieApp">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="banner">
+        </div>
+        
         <ng-include src="'views/nav.html'"></ng-include>
         <ng-view></ng-view>
-        
-        
 
     </body>
 </div>

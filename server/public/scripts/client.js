@@ -3,10 +3,11 @@ console.log('js');
 const app = angular.module('MovieApp', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/', {
-        template: 'hello world',
-        
-    })
+    $routeProvider
+    // .when('/home', {
+    //     template: 'Welcome!',
+    //     controller: 'HomeController as vm'
+    // })
 
         //movies
         .when('/movies', {
