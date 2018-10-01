@@ -1,21 +1,24 @@
 # ext-weekend-movie-project
 
-In this project, I am creating a movie database. 
-Functionality includes adding movies by:
-- name, genre, image url, release date and run time
-- remove movies
-- delete existing movies
-- ability to show total number of movies next to each genre
+In this project, I am created a movie database. 
 
-In addition to a Home page, there will be two views:
-1. Enables user to add a movie
-2. Allows for managing genres
+There are two views:
+1. The movie view
+2. The genre view
+
+
+Functionality includes --
+On the Movie page, adding movies by:
+- name, genre, image url, release date and run time
+- delete existing movies
+On the Genre page,:
+- ability to show total number of movies next to each genre
 
 Below are the queries I used to set up my tables in Postico:
 
 CREATE TABLE "genres" (
 "genre_id" SERIAL PRIMARY KEY,
-"genre" VARCHAR (50) NOT NULL
+"genre" VARCHAR (220) NOT NULL
 );
 
 SELECT * FROM "genres";
@@ -34,28 +37,13 @@ CREATE TABLE "movies" (
 
 SELECT * FROM "movies";
 
+Examples of insertions into the database:
 INSERT INTO "movies" ("title", "release_date", "run_time", "image", "genre_id")
-VALUES ('Citizen Kane', '9-5-1941', '1h 59m', 'citizen-kane.jpg', '8');
-
-INSERT INTO "movies" ("title", "release_date", "run_time", "image", "genre_id")
-VALUES ('The Big Sick', '7-14-2017', '2h', 'the-big-sick.jpg', '3'), 
-('Spider-Man', '5-3-2002', '2h 13m', 'spider-man.jpg', '5'),
-('Avatar', '12-18-2009', '2h 42m', 'avatar.jpg', '4'),
-('It''s a Wonderful Life', '12-25-1946', '2h 15m', 'wonderful-life.jpg', '7'),
-('RBG', '5-4-2018', '1h 38m', 'rbg.jpg', '1'),
-('The Matrix', '3-31-1999', '2h 30m', 'matrix.jpg', '6');
+VALUES ('Citizen Kane', '9-5-1941', '1h 59m', 'http://www.gstatic.com/tv/thumb/movieposters/1485/p1485_p_v8_aa.jpg', '8'),('Crazy Rich Asians', '8-15-2018', '2h 1m', 'http://media.pauline.org/Portals/media/xBlog/uploads/2018/8/28/Poster_Title_Crazy_Rich_Asians.jpg', '2';
 
 UPDATE "movies"
 SET "image" = 'citizen-kane.jpg'
 WHERE "title" = 'Citizen Kane';
-
--- Add a movie to th database
-INSERT INTO "movies" ("title", "release_date", "run_time", "image", "genre_id")
-VALUES ('Crazy Rich Asians', '8-15-2018', '2h 1m', 'crazy-rich-asians.jpg', '2');
-
-CREATE TABLE "movie_genre"(
-	SELECT * FROM "movies"
-	JOIN "genres" ON "genre"."id" = "title"."genre.id";
 
 -- Show total number of movies next to each genre
 SELECT "genre", count("movies"."genre_id")

@@ -4,12 +4,11 @@ const app = angular.module('MovieApp', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-    // .when('/home', {
-    //     template: 'Welcome!',
-    //     controller: 'HomeController as vm'
-    // })
-
+    
         //movies
+        .when('/', {
+            redirectTo: '/movies'
+        })
         .when('/movies', {
             templateUrl: '../views/movies.html',
             controller: 'MovieController as vm'
